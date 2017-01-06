@@ -1,3 +1,9 @@
+8.6.0 / 2017-01-06
+==================
+
+  * Bug fix - Add *reactabular-resizable* to peer dependencies.
+  * Chore - Bump *webpack-merge* range to accept 2.x series.
+
 8.4.0 / 2016-12-01
 ==================
 
