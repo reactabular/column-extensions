@@ -2,6 +2,7 @@ import * as sort from 'sortabular';
 
 function sortableHeader({
   sortingColumns,
+  getSortingColumns,
   onSort,
   props,
   strategy
@@ -11,7 +12,7 @@ function sortableHeader({
       return header.sortable;
     },
     evaluate() {
-      const getSortingColumns = () => sortingColumns || {};
+      getSortingColumns = getSortingColumns || (() => sortingColumns || {});
       const sortable = sort.sort({
         getSortingColumns,
         onSort: (selectedColumn) => {
