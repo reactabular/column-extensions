@@ -19,6 +19,7 @@ module.exports = {
     "no-underscore-dangle": 0, // implementation detail (_highlights etc.)
     "no-unused-expressions": 0, // chai
     "no-use-before-define": 0, // personal preference
+    "no-param-reassign": 0, // relaxed to allow customization
     "react/forbid-prop-types": 0, // TODO: re-enable this later
     "react/sort-comp": 0, // personal preference
     "react/no-multi-comp": 0, // personal preference
