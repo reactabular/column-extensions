@@ -1,3 +1,8 @@
+8.7.0 / 2017-01-16
+==================
+
+  * Feature - Allow `sortableHeader` `getSortingColumns` to be customized. #1
+
 8.6.0 / 2017-01-06
 ==================
 
