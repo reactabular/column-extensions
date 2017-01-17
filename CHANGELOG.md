@@ -1,3 +1,8 @@
+8.7.1 / 2017-01-17
+==================
+
+  * Bug fix - Fix `sortableHeader` sorting when `getSortingColumns` is used. #2
+
 8.7.0 / 2017-01-16
 ==================
 
