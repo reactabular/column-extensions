@@ -18,7 +18,7 @@ function sortableHeader({
         onSort: (selectedColumn) => {
           onSort(
             sort.byColumns({
-              sortingColumns,
+              sortingColumns: getSortingColumns(),
               selectedColumn
             })
           );
@@ -41,7 +41,7 @@ function sortableHeader({
               event: 'onDoubleClick',
               getSortingColumns,
               strategy,
-              onReset: params => onSort(params.sortingColumns)
+              onReset: params => onSort(params.sortingColumns || {})
             })
           ]
         }
