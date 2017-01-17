@@ -18,7 +18,7 @@ function sortableHeader({
         onSort: (selectedColumn) => {
           onSort(
             sort.byColumns({
-              getSortingColumns(),
+              sortingColumns: getSortingColumns(),
               selectedColumn
             })
           );
