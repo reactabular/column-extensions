@@ -1,4 +1,4 @@
-import merge from 'webpack-merge';
+import mergeWith from 'lodash/mergeWith';
 
 const bindColumns = extensions => columns => (
   columns.map(
@@ -23,7 +23,7 @@ function bindColumn({
     return match(col) && evaluate(col);
   });
 
-  return merge(column, ...matches);
+  return mergeWith(column, ...matches);
 }
 
 export default bindColumns;
