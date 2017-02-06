@@ -123,4 +123,53 @@ describe('reactabular-column-extensions.bind', function () {
 
     expect(bind(extensions)(columns)).toEqual(expected);
   });
+
+  it('works with different multiple evaluators', function () {
+    const extensions = [
+      {
+        match({ cell }) {
+          return cell.ok;
+        },
+        evaluate() {
+          return {
+            cell: {
+              evaluated: true
+            }
+          };
+        }
+      },
+      {
+        match({ cell }) {
+          return cell.another;
+        },
+        evaluate() {
+          return {
+            cell: {
+              evaluatedAgain: true
+            }
+          };
+        }
+      }
+    ];
+    const columns = [
+      {
+        cell: {
+          ok: true,
+          another: true
+        }
+      }
+    ];
+    const expected = [
+      {
+        cell: {
+          ok: true,
+          another: true,
+          evaluated: true,
+          evaluatedAgain: true
+        }
+      }
+    ];
+
+    expect(bind(extensions)(columns)).toEqual(expected);
+  });
 });
