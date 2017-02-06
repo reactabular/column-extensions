@@ -1,3 +1,8 @@
+8.8.1 / 2017-02-06
+==================
+
+  * Bug fix - Make sure lodash imports are relative so it doesn't bundle entire lodash.
+
 8.8.0 / 2017-02-06
 ==================
 
