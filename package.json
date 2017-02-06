@@ -9,7 +9,8 @@
     "test:lint": "eslint . --ext .js --cache",
     "test:watch": "jest --watch --",
     "dist:build": "rimraf ./dist && babel ./src --out-dir ./dist",
-    "preversion": "npm run test:all && npm run dist:build && git commit --allow-empty -am \"Update dist\""
+    "preversion": "npm run test:all && npm run dist:build && git commit --allow-empty -am \"Update dist\"",
+    "commit": "commit-wizard"
   },
   "main": "dist",
   "repository": {
@@ -55,9 +56,9 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
-    "git-prepush-hook": "^1.0.1",
     "jest": "^17.0.3",
     "lodash": "^4.17.2",
+    "pre-git": "^3.12.0",
     "react": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -75,7 +76,16 @@
     "sortabular": ">= 1.0.0 < 2.0.0",
     "treetabular": ">= 1.0.0 < 3.0.0"
   },
-  "pre-push": [
-    "test:all"
-  ]
+  "config": {
+    "pre-git": {
+      "commit-msg": "",
+      "pre-commit": [],
+      "pre-push": [
+        "npm run test:all"
+      ],
+      "post-commit": [],
+      "post-checkout": [],
+      "post-merge": []
+    }
+  }
 }
