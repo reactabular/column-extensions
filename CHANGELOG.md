@@ -1,3 +1,8 @@
+8.8.0 / 2017-02-06
+==================
+
+  * Chore - Replace `webpack-merge` with `lodash.mergeWith`. #2
+
 8.7.1 / 2017-01-17
 ==================
 

@@ -66,15 +66,14 @@
     "rimraf": "^2.5.4",
     "searchtabular": "^1.3.2",
     "sortabular": "^1.1.0",
-    "treetabular": "^2.0.0",
-    "webpack-merge": "^2.3.1"
+    "treetabular": "^2.0.0"
   },
   "peerDependencies": {
+    "lodash": ">= 4.0.0 < 5.0.0",
     "reactabular-resizable": ">= 8.0.0 < 9.0.0",
     "searchtabular": ">= 1.0.0 < 2.0.0",
     "sortabular": ">= 1.0.0 < 2.0.0",
-    "treetabular": ">= 1.0.0 < 3.0.0",
-    "webpack-merge": ">= 0.17.0 < 3.0.0"
+    "treetabular": ">= 1.0.0 < 3.0.0"
   },
   "pre-push": [
     "test:all"
