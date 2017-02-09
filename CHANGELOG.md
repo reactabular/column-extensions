@@ -1,3 +1,8 @@
+8.9.1 / 2017-02-09
+==================
+
+  * Fix - Restore old merging behavior for `bind`. Now it should concat arrays.
+
 8.9.0 / 2017-02-09
 ==================
 

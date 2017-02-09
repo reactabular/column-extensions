@@ -1,4 +1,4 @@
-import { mergeWith } from 'lodash';
+import { isArray, mergeWith } from 'lodash';
 
 const bindColumns = extensions => columns => (
   columns.map(
@@ -23,7 +23,13 @@ function bindColumn({
     return match(col) && evaluate(col);
   });
 
-  return mergeWith(column, ...matches);
+  return mergeWith(column, ...matches, (obj, src) => {
+    if (isArray(obj)) {
+      return src.concat(obj);
+    }
+
+    return undefined;
+  });
 }
 
 export default bindColumns;

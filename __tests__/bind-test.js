@@ -118,6 +118,50 @@ describe('reactabular-column-extensions.bind', function () {
     expect(formatters[0]()).toEqual('a');
   });
 
+  it('concats arrays', function () {
+    const extensions = [
+      {
+        match({ cell }) {
+          return cell.ok;
+        },
+        evaluate({ cell: { ok } }) {
+          return {
+            cell: {
+              ok: ok + ok,
+              formatters: [
+                'b'
+              ]
+            }
+          };
+        }
+      }
+    ];
+    const columns = [
+      {
+        cell: {
+          ok: 'foo',
+          formatters: [
+            'a'
+          ]
+        }
+      }
+    ];
+    const expected = [
+      {
+        cell: {
+          ok: 'foofoo',
+          formatters: [
+            'b',
+            'a'
+          ]
+        }
+      }
+    ];
+    const result = bind(extensions)(columns);
+
+    expect(result).toEqual(expected);
+  });
+
   it('works with multiple evaluators', function () {
     const extensions = [
       {
