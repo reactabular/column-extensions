@@ -23,7 +23,7 @@ function bindColumn({
     return match(col) && evaluate(col);
   });
 
-  return mergeWith(column, ...matches, (obj, src) => {
+  return mergeWith({}, column, ...matches, (obj, src) => {
     if (isArray(obj)) {
       return obj.concat(src);
     }

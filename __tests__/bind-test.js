@@ -1,3 +1,4 @@
+import { cloneDeep } from 'lodash';
 import { bind } from '../src';
 
 describe('reactabular-column-extensions.bind', function () {
@@ -160,6 +161,41 @@ describe('reactabular-column-extensions.bind', function () {
     const result = bind(extensions)(columns);
 
     expect(result).toEqual(expected);
+  });
+
+  it('does not mutate columns', function () {
+    const extensions = [
+      {
+        match({ cell }) {
+          return cell.ok;
+        },
+        evaluate({ cell: { ok } }) {
+          return {
+            cell: {
+              ok: ok + ok,
+              formatters: [
+                'b'
+              ]
+            }
+          };
+        }
+      }
+    ];
+    const columns = [
+      {
+        cell: {
+          ok: 'foo',
+          formatters: [
+            'a'
+          ]
+        }
+      }
+    ];
+    const expected = cloneDeep(columns);
+
+    bind(extensions)(columns);
+
+    expect(columns).toEqual(expected);
   });
 
   it('works with multiple evaluators', function () {
