@@ -151,8 +151,8 @@ describe('reactabular-column-extensions.bind', function () {
         cell: {
           ok: 'foofoo',
           formatters: [
-            'b',
-            'a'
+            'a',
+            'b'
           ]
         }
       }

@@ -25,7 +25,7 @@ function bindColumn({
 
   return mergeWith(column, ...matches, (obj, src) => {
     if (isArray(obj)) {
-      return src.concat(obj);
+      return obj.concat(src);
     }
 
     return undefined;
