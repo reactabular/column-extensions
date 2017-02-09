@@ -1,3 +1,8 @@
+8.9.0 / 2017-02-09
+==================
+
+  * Chore - Allow treetabular 3 through a peer dependency.
+
 8.8.1 / 2017-02-06
 ==================
 
