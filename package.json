@@ -1,6 +1,6 @@
 {
   "name": "reactabular-column-extensions",
-  "version": "8.9.1",
+  "version": "8.9.2",
   "description": "Column extensions for Reactabular",
   "scripts": {
     "test:all": "npm test && npm run test:lint",
