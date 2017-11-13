@@ -41,7 +41,9 @@
   "bugs": {
     "url": "https://github.com/reactabular/column-extensions/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "reactabular-resizable": "^8.4.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
